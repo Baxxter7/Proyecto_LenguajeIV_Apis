@@ -25,9 +25,21 @@
             echo json_encode($datos);
         break;
 
+        case "GetMaterial":
+            $datos = $materiales->get_material($body["ID"]);
+            echo json_encode($datos);
+        break;
+/*
+        case "InsertMaterial":
+            $datos = $materiales->insert_material($body["ID"], $body["DESCRIPCION"], $body["UNIDAD"], $body["COSTO"],$body["PRECIO"],$body["APLICA_ISV"],$body["PORCENTAJE_ISV"],$body["ESTADO"],$body["ID_SOCIO"]);
+            echo json_encode("Material agregado exitosamente  ");
+        break;
+ */
+        case "EliminarMaterial":
+            $datos = $materiales->eliminar_material($body["ID"]);
+        echo json_encode("Material eliminado exitosamente");
+        break;  
 
-    }
-
-    
+    }   
 
 ?>
