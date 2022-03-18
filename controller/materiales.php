@@ -34,9 +34,14 @@
             $datos = $materiales->insert_material($body["ID"], $body["DESCRIPCION"], $body["UNIDAD"], $body["COSTO"], $body["PRECIO"], $body["APLICA_ISV"], $body["PORCENTAJE_ISV"], $body["ESTADO"], $body["ID_SOCIO"]);
             echo json_encode("Material agregado exitosamente");
         break;
- 
-        case "EliminarMaterial":
-            $datos = $materiales->eliminar_material($body["ID"]);
+        
+        case "UpdateMaterial":
+            $datos = $materiales->update_material($body["ID"], $body["DESCRIPCION"],$body["UNIDAD"], $body["COSTO"], $body["PRECIO"], $body["APLICA_ISV"], $body["PORCENTAJE_ISV"]);
+            echo json_encode("Material actualizado correctamente");
+        break;
+        
+            case "EliminarMaterial":
+            $datos = $materiales->delete_material($body["ID"]);
             echo json_encode("Material eliminado exitosamente");
         break;  
 
